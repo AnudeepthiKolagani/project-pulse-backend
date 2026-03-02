@@ -2,7 +2,7 @@
 const { DataTypes } = require("sequelize");
 const { sequelize } = require("../db.config");
 //import Employee Model
-const { Employee } = require("./Employee.model");
+const { Employee } = require("./User.model");
 
 //Team Members Model
 exports.TeamMember = sequelize.define(

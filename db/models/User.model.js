@@ -4,8 +4,8 @@ const { sequelize } = require("../db.config");
 const { DataTypes } = require("sequelize");
 
 //define a model and exporting
-exports.Employee = sequelize.define(
-  "Employees",
+exports.User = sequelize.define(
+  "Users",
   {
     Email: {
       type: DataTypes.STRING,
