@@ -3,7 +3,7 @@ const { DataTypes } = require("sequelize");
 const { sequelize } = require("../db.config");
 
 //import Employee model
-const { Employee } = require("./Employee.model");
+const { Employee } = require("./User.model");
 const { Project } = require("./Project.model");
 
 //Resource Request Model

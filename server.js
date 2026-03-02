@@ -12,7 +12,7 @@ const projectManagerApp = require("./routes/projectManager.routes");
 const gdoHeadApp = require("./routes/gdoHead.routes");
 
 //import models
-const { Employee } = require("./db/models/Employee.model");
+const { User } = require("./db/models/User.model");
 const { Project } = require("./db/models/Project.model");
 const { Client } = require("./db/models/Client.model");
 const { ProjectUpdate } = require("./db/models/ProjectUpdate.model");
@@ -36,11 +36,11 @@ const { GdoHeadVerifyToken } = require("./middlewares/GdoHead.Verify.Token");
 require("dotenv").config();
 
 //Associations
-//Employee And Project
-GdoHeadProject = Employee.hasMany(Project, {
+//User And Project
+GdoHeadProject = User.hasMany(Project, {
   foreignKey: { name: "GDO_Head" },
 });
-ProjectGdoHead = Project.belongsTo(Employee, {
+ProjectGdoHead = Project.belongsTo(User, {
   foreignKey: { name: "GDO_Head" },
 });
 
@@ -101,7 +101,7 @@ sequelize
 sequelize.sync();
 
 //defining routes
-app.use("/Pulse/Employee", userApp);
+app.use("/Pulse/User", userApp);
 app.use("/Pulse/Admin", AdminUserVerifyToken, AdminApp);
 app.use("/Pulse/GDOHead", GdoHeadVerifyToken, gdoHeadApp);
 app.use("/Pulse/ProjectManager", ProjectManagerVerifyToken, projectManagerApp);

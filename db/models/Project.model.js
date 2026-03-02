@@ -3,7 +3,7 @@ const { DataTypes } = require("sequelize");
 const { sequelize } = require("../db.config");
 
 //import Employee,client Model
-const { Employee } = require("./Employee.model");
+const { Employee } = require("./User.model");
 const { Client } = require("./Client.model");
 
 //deining Project model and exporting
